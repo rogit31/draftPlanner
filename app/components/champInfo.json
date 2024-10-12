@@ -1,0 +1,674 @@
+[
+  {
+    "name": "Aatrox",
+    "image": "/champInfo/Aatrox.png"
+  },
+  {
+    "name": "Ahri",
+    "image": "/champInfo/Ahri.png"
+  },
+  {
+    "name": "Akali",
+    "image": "/champInfo/Akali.png"
+  },
+  {
+    "name": "Alistar",
+    "image": "/champInfo/Alistar.png"
+  },
+  {
+    "name": "Anivia",
+    "image": "/champInfo/Anivia.png"
+  },
+  {
+    "name": "Aphelios",
+    "image": "/champInfo/Aphelios.png"
+  },
+  {
+    "name": "Fiddlesticks",
+    "image": "/champInfo/Fiddlesticks.png"
+  },
+  {
+    "name": "Malphite",
+    "image": "/champInfo/Malphite.png"
+  },
+  {
+    "name": "Milio",
+    "image": "/champInfo/Milio.png"
+  },
+  {
+    "name": "Fizz",
+    "image": "/champInfo/Fizz.png"
+  },
+  {
+    "name": "Brand",
+    "image": "/champInfo/Brand.png"
+  },
+  {
+    "name": "Viktor",
+    "image": "/champInfo/Viktor.png"
+  },
+  {
+    "name": "Malzahar",
+    "image": "/champInfo/Malzahar.png"
+  },
+  {
+    "name": "Talon",
+    "image": "/champInfo/Talon.png"
+  },
+  {
+    "name": "Neeko",
+    "image": "/champInfo/Neeko.png"
+  },
+  {
+    "name": "Zac",
+    "image": "/champInfo/Zac.png"
+  },
+  {
+    "name": "Morgana",
+    "image": "/champInfo/Morgana.png"
+  },
+  {
+    "name": "TahmKench",
+    "image": "/champInfo/TahmKench.png"
+  },
+  {
+    "name": "KogMaw",
+    "image": "/champInfo/KogMaw.png"
+  },
+  {
+    "name": "Tryndamere",
+    "image": "/champInfo/Tryndamere.png"
+  },
+  {
+    "name": "Kassadin",
+    "image": "/champInfo/Kassadin.png"
+  },
+  {
+    "name": "Viego",
+    "image": "/champInfo/Viego.png"
+  },
+  {
+    "name": "Lissandra",
+    "image": "/champInfo/Lissandra.png"
+  },
+  {
+    "name": "Xerath",
+    "image": "/champInfo/Xerath.png"
+  },
+  {
+    "name": "TwistedFate",
+    "image": "/champInfo/TwistedFate.png"
+  },
+  {
+    "name": "Maokai",
+    "image": "/champInfo/Maokai.png"
+  },
+  {
+    "name": "Rumble",
+    "image": "/champInfo/Rumble.png"
+  },
+  {
+    "name": "DrMundo",
+    "image": "/champInfo/DrMundo.png"
+  },
+  {
+    "name": "Zed",
+    "image": "/champInfo/Zed.png"
+  },
+  {
+    "name": "Kled",
+    "image": "/champInfo/Kled.png"
+  },
+  {
+    "name": "Velkoz",
+    "image": "/champInfo/Velkoz.png"
+  },
+  {
+    "name": "Taric",
+    "image": "/champInfo/Taric.png"
+  },
+  {
+    "name": "Veigar",
+    "image": "/champInfo/Veigar.png"
+  },
+  {
+    "name": "Azir",
+    "image": "/champInfo/Azir.png"
+  },
+  {
+    "name": "Yorick",
+    "image": "/champInfo/Yorick.png"
+  },
+  {
+    "name": "Belveth",
+    "image": "/champInfo/Belveth.png"
+  },
+  {
+    "name": "Volibear",
+    "image": "/champInfo/Volibear.png"
+  },
+  {
+    "name": "Tristana",
+    "image": "/champInfo/Tristana.png"
+  },
+  {
+    "name": "Nami",
+    "image": "/champInfo/Nami.png"
+  },
+  {
+    "name": "Ashe",
+    "image": "/champInfo/Ashe.png"
+  },
+  {
+    "name": "Sion",
+    "image": "/champInfo/Sion.png"
+  },
+  {
+    "name": "Blitzcrank",
+    "image": "/champInfo/Blitzcrank.png"
+  },
+  {
+    "name": "Corki",
+    "image": "/champInfo/Corki.png"
+  },
+  {
+    "name": "Ziggs",
+    "image": "/champInfo/Ziggs.png"
+  },
+  {
+    "name": "Bard",
+    "image": "/champInfo/Bard.png"
+  },
+  {
+    "name": "Ezreal",
+    "image": "/champInfo/Ezreal.png"
+  },
+  {
+    "name": "Galio",
+    "image": "/champInfo/Galio.png"
+  },
+  {
+    "name": "Diana",
+    "image": "/champInfo/Diana.png"
+  },
+  {
+    "name": "Graves",
+    "image": "/champInfo/Graves.png"
+  },
+  {
+    "name": "Camille",
+    "image": "/champInfo/Camille.png"
+  },
+  {
+    "name": "Evelynn",
+    "image": "/champInfo/Evelynn.png"
+  },
+  {
+    "name": "Jax",
+    "image": "/champInfo/Jax.png"
+  },
+  {
+    "name": "Fiora",
+    "image": "/champInfo/Fiora.png"
+  },
+  {
+    "name": "Caitlyn",
+    "image": "/champInfo/Caitlyn.png"
+  },
+  {
+    "name": "Braum",
+    "image": "/champInfo/Braum.png"
+  },
+  {
+    "name": "JarvanIV",
+    "image": "/champInfo/JarvanIV.png"
+  },
+  {
+    "name": "Draven",
+    "image": "/champInfo/Draven.png"
+  },
+  {
+    "name": "Garen",
+    "image": "/champInfo/Garen.png"
+  },
+  {
+    "name": "MonkeyKing",
+    "image": "/champInfo/MonkeyKing.png"
+  },
+  {
+    "name": "Jayce",
+    "image": "/champInfo/Jayce.png"
+  },
+  {
+    "name": "Jinx",
+    "image": "/champInfo/Jinx.png"
+  },
+  {
+    "name": "Jhin",
+    "image": "/champInfo/Jhin.png"
+  },
+  {
+    "name": "Kaisa",
+    "image": "/champInfo/Kaisa.png"
+  },
+  {
+    "name": "Heimerdinger",
+    "image": "/champInfo/Heimerdinger.png"
+  },
+  {
+    "name": "Lucian",
+    "image": "/champInfo/Lucian.png"
+  },
+  {
+    "name": "Gangplank",
+    "image": "/champInfo/Gangplank.png"
+  },
+  {
+    "name": "Cassiopeia",
+    "image": "/champInfo/Cassiopeia.png"
+  },
+  {
+    "name": "Lulu",
+    "image": "/champInfo/Lulu.png"
+  },
+  {
+    "name": "Amumu",
+    "image": "/champInfo/Amumu.png"
+  },
+  {
+    "name": "Gnar",
+    "image": "/champInfo/Gnar.png"
+  },
+  {
+    "name": "Kindred",
+    "image": "/champInfo/Kindred.png"
+  },
+  {
+    "name": "Leblanc",
+    "image": "/champInfo/Leblanc.png"
+  },
+  {
+    "name": "Gragas",
+    "image": "/champInfo/Gragas.png"
+  },
+  {
+    "name": "Olaf",
+    "image": "/champInfo/Olaf.png"
+  },
+  {
+    "name": "Briar",
+    "image": "/champInfo/Briar.png"
+  },
+  {
+    "name": "Darius",
+    "image": "/champInfo/Darius.png"
+  },
+  {
+    "name": "Ryze",
+    "image": "/champInfo/Ryze.png"
+  },
+  {
+    "name": "Kayle",
+    "image": "/champInfo/Kayle.png"
+  },
+  {
+    "name": "Senna",
+    "image": "/champInfo/Senna.png"
+  },
+  {
+    "name": "Rengar",
+    "image": "/champInfo/Rengar.png"
+  },
+  {
+    "name": "Ivern",
+    "image": "/champInfo/Ivern.png"
+  },
+  {
+    "name": "Seraphine",
+    "image": "/champInfo/Seraphine.png"
+  },
+  {
+    "name": "RekSai",
+    "image": "/champInfo/RekSai.png"
+  },
+  {
+    "name": "Shaco",
+    "image": "/champInfo/Shaco.png"
+  },
+  {
+    "name": "Lux",
+    "image": "/champInfo/Lux.png"
+  },
+  {
+    "name": "Janna",
+    "image": "/champInfo/Janna.png"
+  },
+  {
+    "name": "Shen",
+    "image": "/champInfo/Shen.png"
+  },
+  {
+    "name": "Aurora",
+    "image": "/champInfo/Aurora.png"
+  },
+  {
+    "name": "Sett",
+    "image": "/champInfo/Sett.png"
+  },
+  {
+    "name": "Naafiri",
+    "image": "/champInfo/Naafiri.png"
+  },
+  {
+    "name": "Singed",
+    "image": "/champInfo/Singed.png"
+  },
+  {
+    "name": "Shyvana",
+    "image": "/champInfo/Shyvana.png"
+  },
+  {
+    "name": "Skarner",
+    "image": "/champInfo/Skarner.png"
+  },
+  {
+    "name": "Samira",
+    "image": "/champInfo/Samira.png"
+  },
+  {
+    "name": "Illaoi",
+    "image": "/champInfo/Illaoi.png"
+  },
+  {
+    "name": "Khazix",
+    "image": "/champInfo/Khazix.png"
+  },
+  {
+    "name": "Sivir",
+    "image": "/champInfo/Sivir.png"
+  },
+  {
+    "name": "Thresh",
+    "image": "/champInfo/Thresh.png"
+  },
+  {
+    "name": "Nocturne",
+    "image": "/champInfo/Nocturne.png"
+  },
+  {
+    "name": "Warwick",
+    "image": "/champInfo/Warwick.png"
+  },
+  {
+    "name": "Kennen",
+    "image": "/champInfo/Kennen.png"
+  },
+  {
+    "name": "Renata",
+    "image": "/champInfo/Renata.png"
+  },
+  {
+    "name": "Orianna",
+    "image": "/champInfo/Orianna.png"
+  },
+  {
+    "name": "Nilah",
+    "image": "/champInfo/Nilah.png"
+  },
+  {
+    "name": "Taliyah",
+    "image": "/champInfo/Taliyah.png"
+  },
+  {
+    "name": "Vladimir",
+    "image": "/champInfo/Vladimir.png"
+  },
+  {
+    "name": "Vayne",
+    "image": "/champInfo/Vayne.png"
+  },
+  {
+    "name": "Riven",
+    "image": "/champInfo/Riven.png"
+  },
+  {
+    "name": "Trundle",
+    "image": "/champInfo/Trundle.png"
+  },
+  {
+    "name": "Smolder",
+    "image": "/champInfo/Smolder.png"
+  },
+  {
+    "name": "Sejuani",
+    "image": "/champInfo/Sejuani.png"
+  },
+  {
+    "name": "Nautilus",
+    "image": "/champInfo/Nautilus.png"
+  },
+  {
+    "name": "Teemo",
+    "image": "/champInfo/Teemo.png"
+  },
+  {
+    "name": "Irelia",
+    "image": "/champInfo/Irelia.png"
+  },
+  {
+    "name": "Mordekaiser",
+    "image": "/champInfo/Mordekaiser.png"
+  },
+  {
+    "name": "Ornn",
+    "image": "/champInfo/Ornn.png"
+  },
+  {
+    "name": "AurelionSol",
+    "image": "/champInfo/AurelionSol.png"
+  },
+  {
+    "name": "MasterYi",
+    "image": "/champInfo/MasterYi.png"
+  },
+  {
+    "name": "LeeSin",
+    "image": "/champInfo/LeeSin.png"
+  },
+  {
+    "name": "Varus",
+    "image": "/champInfo/Varus.png"
+  },
+  {
+    "name": "Akshan",
+    "image": "/champInfo/Akshan.png"
+  },
+  {
+    "name": "Hwei",
+    "image": "/champInfo/Hwei.png"
+  },
+  {
+    "name": "Renekton",
+    "image": "/champInfo/Renekton.png"
+  },
+  {
+    "name": "Gwen",
+    "image": "/champInfo/Gwen.png"
+  },
+  {
+    "name": "Nunu",
+    "image": "/champInfo/Nunu.png"
+  },
+  {
+    "name": "Twitch",
+    "image": "/champInfo/Twitch.png"
+  },
+  {
+    "name": "Xayah",
+    "image": "/champInfo/Xayah.png"
+  },
+  {
+    "name": "Qiyana",
+    "image": "/champInfo/Qiyana.png"
+  },
+  {
+    "name": "KSante",
+    "image": "/champInfo/KSante.png"
+  },
+  {
+    "name": "Karthus",
+    "image": "/champInfo/Karthus.png"
+  },
+  {
+    "name": "Vex",
+    "image": "/champInfo/Vex.png"
+  },
+  {
+    "name": "Swain",
+    "image": "/champInfo/Swain.png"
+  },
+  {
+    "name": "Zeri",
+    "image": "/champInfo/Zeri.png"
+  },
+  {
+    "name": "Katarina",
+    "image": "/champInfo/Katarina.png"
+  },
+  {
+    "name": "Yone",
+    "image": "/champInfo/Yone.png"
+  },
+  {
+    "name": "Zoe",
+    "image": "/champInfo/Zoe.png"
+  },
+  {
+    "name": "Vi",
+    "image": "/champInfo/Vi.png"
+  },
+  {
+    "name": "XinZhao",
+    "image": "/champInfo/XinZhao.png"
+  },
+  {
+    "name": "Annie",
+    "image": "/champInfo/Annie.png"
+  },
+  {
+    "name": "Elise",
+    "image": "/champInfo/Elise.png"
+  },
+  {
+    "name": "Ekko",
+    "image": "/champInfo/Ekko.png"
+  },
+  {
+    "name": "Hecarim",
+    "image": "/champInfo/Hecarim.png"
+  },
+  {
+    "name": "Pantheon",
+    "image": "/champInfo/Pantheon.png"
+  },
+  {
+    "name": "Nidalee",
+    "image": "/champInfo/Nidalee.png"
+  },
+  {
+    "name": "Chogath",
+    "image": "/champInfo/Chogath.png"
+  },
+  {
+    "name": "Sylas",
+    "image": "/champInfo/Sylas.png"
+  },
+  {
+    "name": "Rammus",
+    "image": "/champInfo/Rammus.png"
+  },
+  {
+    "name": "Yuumi",
+    "image": "/champInfo/Yuumi.png"
+  },
+  {
+    "name": "Sona",
+    "image": "/champInfo/Sona.png"
+  },
+  {
+    "name": "Pyke",
+    "image": "/champInfo/Pyke.png"
+  },
+  {
+    "name": "Rakan",
+    "image": "/champInfo/Rakan.png"
+  },
+  {
+    "name": "Rell",
+    "image": "/champInfo/Rell.png"
+  },
+  {
+    "name": "Nasus",
+    "image": "/champInfo/Nasus.png"
+  },
+  {
+    "name": "Zilean",
+    "image": "/champInfo/Zilean.png"
+  },
+  {
+    "name": "Syndra",
+    "image": "/champInfo/Syndra.png"
+  },
+  {
+    "name": "Kayn",
+    "image": "/champInfo/Kayn.png"
+  },
+  {
+    "name": "Urgot",
+    "image": "/champInfo/Urgot.png"
+  },
+  {
+    "name": "Quinn",
+    "image": "/champInfo/Quinn.png"
+  },
+  {
+    "name": "Udyr",
+    "image": "/champInfo/Udyr.png"
+  },
+  {
+    "name": "Yasuo",
+    "image": "/champInfo/Yasuo.png"
+  },
+  {
+    "name": "Poppy",
+    "image": "/champInfo/Poppy.png"
+  },
+  {
+    "name": "Soraka",
+    "image": "/champInfo/Soraka.png"
+  },
+  {
+    "name": "Leona",
+    "image": "/champInfo/Leona.png"
+  },
+  {
+    "name": "Lillia",
+    "image": "/champInfo/Lillia.png"
+  },
+  {
+    "name": "Kalista",
+    "image": "/champInfo/Kalista.png"
+  },
+  {
+    "name": "Zyra",
+    "image": "/champInfo/Zyra.png"
+  },
+  {
+    "name": "Karma",
+    "image": "/champInfo/Karma.png"
+  },
+  {
+    "name": "MissFortune",
+    "image": "/champInfo/MissFortune.png"
+  }
+]
