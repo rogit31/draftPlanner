@@ -1,0 +1,38 @@
+.champDiv{
+    margin: 4px;
+    display: flex;
+    gap: 4px;
+    border: 1px solid white;
+    align-items: center;
+}
+.champImg{
+    width: 38px;
+    height: 38px;
+}
+.champDiv input{
+    color: black;
+    padding: 4px;
+    max-width: 100px;
+}
+.champDiv span{
+    margin-left: auto;
+    padding: 4px;
+}
+.champDiv input:focus{
+    outline: 2px solid red;
+}
+.blueBan{
+    background-color: gray;
+}
+.redBan{
+    flex-direction: row-reverse;
+    background-color: gray;
+}
+.R1, .R2, .R3, .R4, .R5{
+    flex-direction: row-reverse;
+}
+.redBan span,
+.R1 span, .R2 span, .R3 span, .R4 span, .R5 span {
+    margin-left: 0;
+    margin-right: auto; /* Push span to the left */
+}

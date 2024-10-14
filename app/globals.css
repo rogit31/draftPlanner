@@ -25,7 +25,7 @@ body {
     text-wrap: balance;
   }
 }
-.layoutWrapper{
-  display: grid;
-  grid-template-columns: 1fr 9fr;
-}
+/*.layoutWrapper{*/
+/*  display: grid;*/
+/*  grid-template-columns: 1fr 9fr;*/
+/*}*/
