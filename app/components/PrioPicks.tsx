@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import ChampField from "@/app/components/ChampField";
 import champInfo from '../components/champInfo.json';
 
@@ -11,6 +11,24 @@ export default function PrioPicks() {
         ad: ["", "", "", ""],
         support: ["", "", "", ""]
     });
+
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const savedPicks = localStorage.getItem("picks");
+            if (savedPicks) {
+                setPicks(JSON.parse(savedPicks));
+            }
+            setIsMounted(true); // Set to true once mounted
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isMounted) {
+            localStorage.setItem("picks", JSON.stringify(picks));
+        }
+    }, [picks, isMounted]);
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
@@ -56,7 +74,7 @@ export default function PrioPicks() {
                                         <ChampField
                                             value={champion}
                                             index={index}
-                                            handleNameChange={(event) => handleChampNameChange(event, index, role as keyof typeof picks)}
+                                            handleNameChange={(event:never) => handleChampNameChange(event, index, role as keyof typeof picks)}
                                             champImage={champImage}
                                         />
                                         <button
