@@ -8,7 +8,7 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
         <div className="border border-red-200">
             <h2>Scenarios</h2>
             <h2>{matchSet.opponentName}</h2>
-            <div className="matchSetWrapper">
+            <div>
                 <h3>{matchSet.drafts.map((draft) => (
                     <div key={draft.id}>
                         <DraftScenario

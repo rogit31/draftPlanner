@@ -31,7 +31,32 @@ body {
 /*}*/
 
 .matchSetWrapper{
+
+}
+.championInput{
+  color: black;
+  width: 100px;
+}
+.championInputWrapper{
+  display: flex;
+  height: 40px;
+}
+.draftWrapper{
+  border: 1px solid red;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+.ban{
+  background-color: gray;
+}
+.blue-pick {
+  background-color: lightblue;
+}
+
+.red-pick {
+  background-color: lightcoral;
+}
+.red-side{
+  display: flex;
+  flex-direction: row-reverse;
 }

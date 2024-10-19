@@ -2,6 +2,7 @@
 import PrioPicks from "@/app/components/PrioPicks";
 import MatchSet from "@/app/components/MatchSet";
 import {useEffect, useState} from "react";
+import matchSet from "@/app/components/MatchSet";
 
 export default function Home() {
 
@@ -17,19 +18,144 @@ export default function Home() {
         return {
             opponentName: 'Opponent 1',
             id: '0',
-            drafts: [...buildDrafts(5, "blue"), ...buildDrafts(5, "red")],
+            drafts: buildDrafts(10),
         };
     }
 
-    function buildDrafts(draftCount: number, side: string) {
+    function buildDrafts(draftCount: number) {
         return Array(draftCount).fill(undefined).map((_, index) => ({
-            id: side + index,
-            side: side,
-            picks: Array(5).fill(undefined).map((_, champIndex) => ({
-                championIndex: champIndex,
-                championName: 'Xayah',
-                championPosition: ''
-            })),
+            id: index,
+
+            blueSide: {
+                side: 'blue',
+                picks: [
+                    {
+                        championPosition: 'blueBan1',
+                        championIndex: 0,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'blueBan2',
+                        championIndex: 1,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'blueBan3',
+                        championIndex: 2,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'B1',
+                        championIndex: 3,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'B2',
+                        championIndex: 4,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'B3',
+                        championIndex: 5,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'blueBan4',
+                        championIndex: 6,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'blueBan5',
+                        championIndex: 7,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'B4',
+                        championIndex: 8,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'B5',
+                        championIndex: 9,
+                        championName: '',
+                        isPick: true
+                    }
+                ]
+            },
+            redSide: {
+                side: 'red',
+                picks: [
+                    {
+                        championPosition: 'redBan1',
+                        championIndex: 0,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'redBan2',
+                        championIndex: 1,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'redBan3',
+                        championIndex: 2,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'R1',
+                        championIndex: 3,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'R2',
+                        championIndex: 4,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'R3',
+                        championIndex: 5,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'redBan4',
+                        championIndex: 6,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'redBan5',
+                        championIndex: 7,
+                        championName: '',
+                        isPick: false
+                    },
+                    {
+                        championPosition: 'R4',
+                        championIndex: 8,
+                        championName: '',
+                        isPick: true
+                    },
+                    {
+                        championPosition: 'R5',
+                        championIndex: 9,
+                        championName: '',
+                        isPick: true
+                    }
+                ]
+            }
         }));
     }
 
@@ -43,41 +169,29 @@ export default function Home() {
         }));
     }
 
-    const handleChampChange = (matchSetIndex: number, draftID: string, champIndex: number, newChampName: string) => {
+    const handleChampChange = (
+        matchSetIndex: number,
+        draftID: number,
+        champIndex: number,
+        newChampName: string,
+        side: "blue" | "red"
+    ) => {
         setData((prevState) => {
             const updatedMatchSets = [...prevState.matchSets];
             const matchSet = updatedMatchSets[matchSetIndex];
+            const draft = matchSet.drafts.find((d) => d.id === draftID)
 
-            // Check if matchSet is defined
-            if (!matchSet) {
-                console.error(`Match set at index ${matchSetIndex} is undefined`);
-                return prevState; // Return previous state if matchSet is undefined
-            }
-
-            const draft = matchSet.drafts.find(d => d.id === draftID);
-
-            // Check if draft is defined
             if (!draft) {
-                console.error(`Draft at index ${draftID} is undefined in match set ${matchSetIndex}`);
-                return prevState; // Return previous state if draft is undefined
+                console.error("Oops, draft was undefined.");
+                return prevState;
             }
+            const picks = side === "blue" ? draft.blueSide.picks : draft.redSide.picks;
 
-            const picks = draft.picks;
-
-            // Check if picks is defined
-            if (!picks) {
-                console.error(`Picks are undefined for draft at index ${draftID} in match set ${matchSetIndex}`);
-                return prevState; // Return previous state if picks is undefined
+            if (picks[champIndex]) {
+                picks[champIndex].championName = newChampName;
+            } else {
+                console.error("Invalid champion index.");
             }
-
-            // Check if champIndex is valid
-            if (champIndex < 0 || champIndex >= picks.length) {
-                console.error(`champIndex ${champIndex} is out of bounds for picks`);
-                return prevState; // Return previous state if champIndex is out of bounds
-            }
-
-            // Update champion name
-            picks[champIndex].championName = newChampName;
 
             return {
                 ...prevState,
@@ -86,11 +200,13 @@ export default function Home() {
         });
     };
 
-
-    const [data, setData] = useState(buildData);
+    const [data, setData] = useState(() => {
+        const savedData = localStorage.getItem("data");
+        return savedData ? JSON.parse(savedData) : buildData();
+    });
 
     useEffect(() => {
-        console.log(data);
+        localStorage.setItem("data", JSON.stringify(data));
     }, [data]);
 
     return (
@@ -100,7 +216,7 @@ export default function Home() {
                 <PrioPicks />
                 {data.matchSets.map((matchSet, matchSetIndex) => {
                     return (
-                        <div key={matchSet.id}>
+                        <div key={matchSet.id} className="matchSetWrapper">
                             <MatchSet
                                 matchSet={matchSet}
                                 matchSetIndex={matchSetIndex}
