@@ -12,12 +12,14 @@ export interface Side {
 
 export interface Draft {
     id: number;
+    siding: "regular" | "reverse";
     blueSide: Side;
     redSide: Side;
 }
 export interface MatchSet {
-    opponentName: string;
-    id: string;
+    team1: string;
+    team2: string;
+    id: number;
     drafts: Draft[];
 }
 
@@ -25,6 +27,9 @@ export interface MatchSetProps {
     matchSet: MatchSet;
     matchSetIndex: number;
     handleChampChange: (matchSetIndex: number, draftID: number, champIndex: number, newChampName: string, side: "blue" | "red") => void;
+    handleTeamNameChange: (matchSetIndex: number, newTeamName: string, teamID: "team1" | "team2") => void;
+    handleAddDraft: (matchSetIndex: number, siding: "regular" | "reverse") => void;
+    handleRemoveDraft: (matchSetIndex: number, draftID: number) => void;
 }
 
 export interface DraftScenarioProps {
@@ -32,4 +37,6 @@ export interface DraftScenarioProps {
     draftID: number;
     matchSetIndex: number;
     handleChampChange: (matchSetIndex: number, draftID:number, champIndex: number, newChampName: string, side: "blue" | "red") => void;
+    team1: string;
+    team2: string;
 }

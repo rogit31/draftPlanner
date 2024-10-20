@@ -3,7 +3,7 @@ import { FC } from "react";
 import { DraftScenarioProps } from "@/app/types";
 import championData from "@/app/components/champInfo.json";
 
-const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleChampChange }) => {
+const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleChampChange, team1, team2 }) => {
     function findChampionImage(champName: string) {
         const foundChamp = championData.find((champion) => champion.name === champName);
         return foundChamp ? foundChamp.image : null;
@@ -15,23 +15,23 @@ const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleCha
     }
 
     return (
-        <div>
-            <h2>{draft.id}</h2>
+        <div className="draftTileWrapper">
+        <h2 className={`displayName ${draft.siding}`}><span>{team1}</span><span>{team2}</span></h2>
             <div className="draftWrapper">
-                <div>
+            <div>
                     {draft.blueSide.picks.map((pick,index) => {
                         const champImage = findChampionImage(pick.championName);
                         const tabIndexOrder = [1, 3, 5, 7, 10, 11, 13, 15, 18, 19]
                         return (
                             <div
                                 key={pick.championIndex}
-                                className={`championInputWrapper ${getPickClass(pick.isPick, "blue")}`}
+                                className="championInputWrapper"
                             >
                                 {champImage ? <img src={champImage} alt={pick.championName} /> : null}
                                 <input
                                     tabIndex={tabIndexOrder[index] + 100 * draft.id + 1000 * matchSetIndex}
                                     placeholder={pick.championPosition}
-                                    className="championInput"
+                                    className={`championInput ${getPickClass(pick.isPick, "blue")}`}
                                     type="text"
                                     value={pick.championName}
                                     onChange={(e) =>
@@ -44,7 +44,6 @@ const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleCha
                                         )
                                     }
                                 />
-                                <span></span>
                             </div>
                         );
                     })}
@@ -56,13 +55,13 @@ const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleCha
                         return (
                             <div
                                 key={pick.championIndex}
-                                className={`championInputWrapper ${getPickClass(pick.isPick, "red")} red-side`}
+                                className="championInputWrapper red-side"
                             >
                                 {champImage ? <img src={champImage} alt={pick.championName} /> : null}
                                 <input
                                     tabIndex={tabIndexOrder[index] + 100 * draft.id + 1000 * matchSetIndex}
                                     placeholder={pick.championPosition}
-                                    className="championInput"
+                                    className={`championInput ${getPickClass(pick.isPick, "red")}`}
                                     type="text"
                                     value={pick.championName}
                                     onChange={(e) =>

@@ -2,9 +2,11 @@
 import PrioPicks from "@/app/components/PrioPicks";
 import MatchSet from "@/app/components/MatchSet";
 import {useEffect, useState} from "react";
-import matchSet from "@/app/components/MatchSet";
 
 export default function Home() {
+
+    const [data, setData] = useState(buildData);
+    const [isMounted, setIsMounted] = useState(false);
 
     function buildData() {
         return {
@@ -14,35 +16,52 @@ export default function Home() {
         };
     }
 
+    useEffect(() => {
+        if(typeof(window) !== undefined){
+            const savedData = localStorage.getItem("data");
+            if(savedData){
+                setData((JSON).parse(savedData));
+            }
+            setIsMounted(true)
+        }
+    }, []);
+
+    useEffect(() => {
+        if(isMounted){
+            localStorage.setItem("data", JSON.stringify(data));
+        }
+    }, [data, isMounted]);
+
     function buildMatch() {
         return {
-            opponentName: 'Opponent 1',
-            id: '0',
-            drafts: buildDrafts(10),
+            team1: 'Team 1',
+            team2: 'Team 2',
+            id: 0,
+            drafts: [...buildDrafts(5,"regular"), ...buildDrafts(5, "reverse", 5)],
         };
     }
 
-    function buildDrafts(draftCount: number) {
+    function buildDrafts(draftCount: number, siding: "regular" | "reverse", startID: number = 0) {
         return Array(draftCount).fill(undefined).map((_, index) => ({
-            id: index,
-
+            id: index + startID,
+            siding: siding,
             blueSide: {
                 side: 'blue',
                 picks: [
                     {
-                        championPosition: 'blueBan1',
+                        championPosition: 'Blue Ban',
                         championIndex: 0,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'blueBan2',
+                        championPosition: 'Blue Ban',
                         championIndex: 1,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'blueBan3',
+                        championPosition: 'Blue Ban',
                         championIndex: 2,
                         championName: '',
                         isPick: false
@@ -66,13 +85,13 @@ export default function Home() {
                         isPick: true
                     },
                     {
-                        championPosition: 'blueBan4',
+                        championPosition: 'Blue Ban',
                         championIndex: 6,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'blueBan5',
+                        championPosition: 'Blue Ban',
                         championIndex: 7,
                         championName: '',
                         isPick: false
@@ -95,19 +114,19 @@ export default function Home() {
                 side: 'red',
                 picks: [
                     {
-                        championPosition: 'redBan1',
+                        championPosition: 'Red Ban',
                         championIndex: 0,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'redBan2',
+                        championPosition: 'Red Ban',
                         championIndex: 1,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'redBan3',
+                        championPosition: 'Red Ban',
                         championIndex: 2,
                         championName: '',
                         isPick: false
@@ -131,13 +150,13 @@ export default function Home() {
                         isPick: true
                     },
                     {
-                        championPosition: 'redBan4',
+                        championPosition: 'Red Ban',
                         championIndex: 6,
                         championName: '',
                         isPick: false
                     },
                     {
-                        championPosition: 'redBan5',
+                        championPosition: 'Red Ban',
                         championIndex: 7,
                         championName: '',
                         isPick: false
@@ -161,13 +180,64 @@ export default function Home() {
 
     function handleAddMatchSet() {
         const newMatchSet = buildMatch();
-        newMatchSet.id = data.matchSets.length.toString();
-        newMatchSet.opponentName = `Opponent ${data.matchSets.length + 1}`;
+        newMatchSet.id = data.matchSets.length;
+        newMatchSet.team1 = `Team 1`;
+        newMatchSet.team2 = "Team 2";
         setData((prevState) => ({
             ...prevState,
             matchSets: [...prevState.matchSets, newMatchSet],
         }));
     }
+    function handleRemoveMatchSet(matchSetID:number){
+        setData((prevState) => {
+            const updatedMatchSets = prevState.matchSets.filter((matchSet) => matchSet.id !== matchSetID);
+            return {
+                ...prevState,
+                matchSets: updatedMatchSets,
+            }
+        })
+    }
+    function handleAddDraft(matchSetID:number, siding: "regular" | "reverse"){
+
+        setData((prevState)=> {
+            const updatedMatchSets   = prevState.matchSets.map((matchSet)=>{
+                const currentDraftCount = matchSet.drafts.length
+                if (matchSet.id === matchSetID){
+                    const newDraft = buildDrafts(1, siding, currentDraftCount)[0];
+
+                    return{
+                        ...matchSet,
+                        drafts: [...matchSet.drafts, newDraft],
+                    }
+                }
+                return matchSet;
+            });
+            return {
+                ...prevState,
+                matchSets: updatedMatchSets,
+            }
+        })
+    }
+
+    function handleRemoveDraft(matchSetID: number, draftID: number) {
+        setData((prevState) => {
+            const updatedMatchSets = prevState.matchSets.map((matchSet) => {
+                if (matchSet.id === matchSetID) {
+                    return {
+                        ...matchSet,
+                        drafts: matchSet.drafts.filter((draft) => draft.id !== draftID),
+                    };
+                }
+                return matchSet;
+            });
+
+            return {
+                ...prevState,
+                matchSets: updatedMatchSets,
+            };
+        });
+    }
+
 
     const handleChampChange = (
         matchSetIndex: number,
@@ -179,7 +249,8 @@ export default function Home() {
         setData((prevState) => {
             const updatedMatchSets = [...prevState.matchSets];
             const matchSet = updatedMatchSets[matchSetIndex];
-            const draft = matchSet.drafts.find((d) => d.id === draftID)
+            const draft = matchSet.drafts.find((d) => d.id === draftID);
+
 
             if (!draft) {
                 console.error("Oops, draft was undefined.");
@@ -200,32 +271,55 @@ export default function Home() {
         });
     };
 
-    const [data, setData] = useState(() => {
-        const savedData = localStorage.getItem("data");
-        return savedData ? JSON.parse(savedData) : buildData();
-    });
+    const handleTeamNameChange = (
+        matchSetIndex: number,
+        newTeamName: string,
+        teamID: "team1"| "team2",
+    ) => {
+        setData((prevState) => {
+            const updatedMatchSets = [...prevState.matchSets];
+            const updatedMatchSet = {...updatedMatchSets[matchSetIndex]};
 
-    useEffect(() => {
-        localStorage.setItem("data", JSON.stringify(data));
-    }, [data]);
+            updatedMatchSet[teamID] = newTeamName;
+            updatedMatchSets[matchSetIndex] = updatedMatchSet;
+            return{
+                ...prevState,
+                matchSets: updatedMatchSets
+            }
+        })
+    }
+
 
     return (
         <>
             <h1 className="text-4xl font-bold text-center">Home page</h1>
-            <div className="">
-                <PrioPicks />
-                {data.matchSets.map((matchSet, matchSetIndex) => {
-                    return (
-                        <div key={matchSet.id} className="matchSetWrapper">
-                            <MatchSet
-                                matchSet={matchSet}
-                                matchSetIndex={matchSetIndex}
-                                handleChampChange={handleChampChange}
-                            />
-                        </div>
-                    );
-                })}
-                <button onClick={() => handleAddMatchSet()}>Add match</button>
+            <div className="contentWrapper">
+                <div>
+                    <PrioPicks />
+                </div>
+                <div>
+                    {data.matchSets.map((matchSet, matchSetIndex) => {
+                        return (
+                            <div key={matchSet.id} className="allSetsWrapper">
+                                <MatchSet
+                                    matchSet={matchSet}
+                                    matchSetIndex={matchSetIndex}
+                                    handleChampChange={handleChampChange}
+                                    handleTeamNameChange={handleTeamNameChange}
+                                    handleAddDraft={handleAddDraft}
+                                    handleRemoveDraft={handleRemoveDraft}
+                                />
+                                <div className="removeMatchSetWrapper">
+                                    {matchSet.id !== 0 ? <button onClick={() => handleRemoveMatchSet(matchSet.id)}>Remove match</button> : "" }
+                                </div>
+                            </div>
+
+                        );
+                    })}
+                    <div className="addMatchSetWrapper">
+                        <button onClick={() => handleAddMatchSet()}>Add match</button>
+                    </div>
+                </div>
             </div>
         </>
     );
