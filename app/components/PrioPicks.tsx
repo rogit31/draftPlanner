@@ -20,7 +20,7 @@ export default function PrioPicks() {
             if (savedPicks) {
                 setPicks(JSON.parse(savedPicks));
             }
-            setIsMounted(true); // Set to true once mounted
+            setIsMounted(true);
         }
     }, []);
 
@@ -66,14 +66,14 @@ export default function PrioPicks() {
                         <hr/>
                         <div className="grid grid-cols-2 gap-1">
                         {champs.map((champion: string, index: number) => {
-                            const champData = champInfo.find(champ => champ.name === champion);
+                            const champData = champInfo.find(champ => champ.name.toLowerCase() === champion.toLowerCase());
                             const champImage = champData ? `${champData.image}` : null;
                             return (
                                 <div key={index} className="flex">
                                         <ChampField
                                             value={champion}
                                             index={index}
-                                            handleNameChange={(event:never) => handleChampNameChange(event, index, role as keyof typeof picks)}
+                                            handleNameChange={(event) => handleChampNameChange(event, index, role as keyof typeof picks)}
                                             champImage={champImage}
                                         />
                                         <button

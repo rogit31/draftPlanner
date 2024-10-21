@@ -1,12 +1,24 @@
+import { FC } from 'react';
 
-export default function ChampField(props: { value: string, index: number, handleNameChange:any, champImage?:string|null}) {
+interface ChampFieldProps {
+    value: string;
+    index: number;
+    handleNameChange: (event: React.ChangeEvent<HTMLInputElement>, index: number) => void;
+    champImage?: string | null;
+}
 
-
+const ChampField: FC<ChampFieldProps> = ({ value, index, handleNameChange, champImage }) => {
     return (
         <div className="prioPickInputWrapper">
-            <input type="text" className="prioPickInput" value={props.value}
-                   onChange={(event) => props.handleNameChange(event, props.index)}/>
-            {props.champImage && <img src={props.champImage} alt={props.value}/>}
+            <input
+                type="text"
+                className="prioPickInput"
+                value={value}
+                onChange={(event) => handleNameChange(event, index)}
+            />
+            {champImage && <img src={champImage} alt={value} />}
         </div>
     );
-}
+};
+
+export default ChampField;

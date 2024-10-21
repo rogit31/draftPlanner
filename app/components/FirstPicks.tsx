@@ -54,7 +54,7 @@ export default function FirstPicks() {
         <div className="firstPicksInputsWrapper">
             <div className="">
                 {firstPicks.blueSide.map((pick, index) => {
-                    const championMatch = champInfo.find(champ => champ.name === pick);
+                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return(
                         <div key={index} className="championFirstPickWrapper blueSideFirstPickWrapper">
@@ -76,7 +76,7 @@ export default function FirstPicks() {
         </div>
             <div className="">
                 {firstPicks.redSide.map((pick, index) => {
-                    const championMatch = champInfo.find(champ => champ.name === pick);
+                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return (
                         <div key={index} className="championFirstPickWrapper redSideFirstPickWrapper">
