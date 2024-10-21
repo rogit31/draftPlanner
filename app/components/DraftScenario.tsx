@@ -15,7 +15,7 @@ const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleCha
     }
 
     return (
-        <div className="draftTileWrapper">
+        <div>
         <h2 className={`displayName ${draft.siding}`}><span>{team1}</span><span>{team2}</span></h2>
             <div className="draftWrapper">
             <div>

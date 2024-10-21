@@ -69,8 +69,7 @@ export default function PrioPicks() {
                             const champData = champInfo.find(champ => champ.name === champion);
                             const champImage = champData ? `${champData.image}` : null;
                             return (
-                                <div key={index} className="">
-                                    <div className="flex items-center gap-2">
+                                <div key={index} className="flex">
                                         <ChampField
                                             value={champion}
                                             index={index}
@@ -80,11 +79,10 @@ export default function PrioPicks() {
                                         <button
                                             type="button"
                                             onClick={() => handleRemoveChamp(index, role as keyof typeof picks)}
-                                            className="font-bold text-sm text-red-500"
+                                            className="removePickButton"
                                         >
                                             X
                                         </button>
-                                    </div>
                                 </div>
                             );
                         })}
@@ -92,7 +90,7 @@ export default function PrioPicks() {
                         <div className="flex justify-center">
                             <button
                                 onClick={() => handleAddChamp(role as keyof typeof picks)}
-                                className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-md text-sm px-2.5 py-1 dark:bg-gray-800 dark:hover:bg-gray-700 mt-2 mb-2"
+                                className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium text-sm px-2.5 py-1 dark:bg-gray-800 dark:hover:bg-gray-700 mt-2 mb-2"
                                 type="button"
                             >
                                 Add

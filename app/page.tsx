@@ -2,6 +2,7 @@
 import PrioPicks from "@/app/components/PrioPicks";
 import MatchSet from "@/app/components/MatchSet";
 import {useEffect, useState} from "react";
+import FirstPicks from "@/app/components/FirstPicks";
 
 export default function Home() {
 
@@ -292,15 +293,16 @@ export default function Home() {
 
     return (
         <>
-            <h1 className="text-4xl font-bold text-center">Home page</h1>
+            <h1 className="text-4xl font-bold text-center m-5">DraftPlanner</h1>
             <div className="contentWrapper">
                 <div>
                     <PrioPicks />
+                    <FirstPicks />
                 </div>
                 <div>
                     {data.matchSets.map((matchSet, matchSetIndex) => {
                         return (
-                            <div key={matchSet.id} className="allSetsWrapper">
+                            <div key={matchSet.id}>
                                 <MatchSet
                                     matchSet={matchSet}
                                     matchSetIndex={matchSetIndex}
@@ -317,9 +319,10 @@ export default function Home() {
                         );
                     })}
                     <div className="addMatchSetWrapper">
-                        <button onClick={() => handleAddMatchSet()}>Add match</button>
+                        <button className="addMatchSetButton" onClick={() => handleAddMatchSet()}>Add match</button>
                     </div>
                 </div>
+
             </div>
         </>
     );

@@ -11,8 +11,7 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
     }
 
     return (
-        <div className="border border-red-200">
-            <h2 className="text-center font-bold">Scenarios</h2>
+        <div className="border border-red-200 p-2">
             <div className="teamNameInputWrapper">
                 <input className="teamNameInput" type="text" value={matchSet.team1}
                        onChange={(e) => handleTeamNameChange(matchSetIndex, e.target.value, "team1")}/>
@@ -22,7 +21,7 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
             </div>
             <div className="matchSetWrapper">
                 {matchSet.drafts.map((draft) => (
-                    <div key={draft.id}>
+                    <div key={draft.id} className="draftTileWrapper">
                         <DraftScenario
                             draft={draft}
                             draftID={draft.id}
@@ -31,7 +30,7 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
                             team1={matchSet.team1}
                             team2={matchSet.team2}
                         />
-                        <button onClick={() => handleRemoveDraft(matchSetIndex, draft.id)}>Remove Draft</button>
+                        <button className="removeDraftButton" onClick={() => handleRemoveDraft(matchSetIndex, draft.id)}>Remove Draft</button>
                     </div>
                 ))}
                     <ConfirmSideModal

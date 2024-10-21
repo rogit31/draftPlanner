@@ -29,39 +29,51 @@ body {
   display: grid;
   grid-template-columns: 1fr 9fr;
 }
-
+img{
+  max-width: 100%;
+}
 .matchSetWrapper{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 .championInput{
+  color: #000000;
   padding: 4px;
   width: 100%;
-  border: 1px solid #999999;
+  border: 1px solid #b6b6b6;
 }
-
+.championInput:hover{
+  cursor: pointer;
+}
 .championInput:focus{
   outline: none;
   border: none;
   box-shadow: inset 0 0 0 2px red;
 }
+.championInput::placeholder{
+  color: #373131;
+}
 .championInputWrapper{
   display: flex;
-  height: 40px;
+  height: 36px;
 }
 .draftWrapper{
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 280px;
 }
+.draftWrapper:hover{
+  cursor: pointer;
+}
 .draftTileWrapper{
   margin: 8px 0 8px;
 }
 .ban{
-  background-color: #605d5d;
+  background-color: #7e7d7d;
+  color: #321111;
 }
 .blue-pick {
-  background-color: #1d96bd;
+  background-color: #32a4e1;
   font-weight: bold;
 }
 
@@ -76,6 +88,7 @@ body {
 .teamNameInput{
   color: black;
   width: 150px;
+  padding: 2px;
 }
 .teamNameInput:focus{
   outline: none;
@@ -125,7 +138,7 @@ body {
 }
 .blueSideButton{
   width: 100%;
-  background-color: #1d96bd;
+  background-color: #18a4d1;
 }
 .blueSideButton:hover{
   background-color: #27acd6;
@@ -152,6 +165,64 @@ body {
   display: flex;
   justify-content: center;
 }
-.addMatchSetWrapper{
-
+.removeDraftButton{
+  border: 1px solid white;
+  padding: 4px;
+  font-size: 12px;
+}
+.addMatchSetButton{
+  border: 1px solid white;
+  padding: 8px;
+  margin: 22px;
+}
+.prioPickInput{
+  width: 100%;
+  color: black;
+}
+.prioPickInputWrapper{
+  display: flex;
+  height: 36px;
+}
+hr{
+  margin-bottom: 4px;
+}
+.firstPicksWrapper{
+  border: solid 1px white;
+  width: 100%;
+}
+.blueSideFirstPicks{
+  background-color: #32a4e1;
+}
+.redSideFirstPicks{
+  background-color: #ea5f5f;
+}
+.championFirstPickWrapper{
+  display: flex;
+  height: 36px;
+}
+.championFirstPickWrapper input{
+  width: 100%;
+}
+.championFirstPickInput{
+  border: 1px solid gray;
+  font-weight: bold;
+  color: black;
+  padding: 4px;
+}
+.redSideFirstPicks{
+  text-align: right;
+}
+.blueSideFirstPickWrapper{
+  flex-direction: row-reverse;
+}
+.firstPicksInputsWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.removePickButton{
+  color: #d13e3e;
+  font-weight: bold;
+  padding: 2px 6px 2px 6px;
+  border: 1px solid #373737;
+  border-radius: 2px;
 }
