@@ -8,7 +8,7 @@ export default function PrioPicks() {
         top: ["", "", "", ""],
         jungle: ["", "", "", ""],
         mid: ["", "", "", ""],
-        ad: ["", "", "", ""],
+        bottom: ["", "", "", ""],
         support: ["", "", "", ""]
     });
 
@@ -57,7 +57,7 @@ export default function PrioPicks() {
     }
 
     return (
-        <div className="w-96 border border-solid border-amber-500 p-4">
+        <div className="w-96 p-4">
             <h2 className="text-center mb-4">Priority Picks</h2>
             <form onSubmit={handleSubmit} className="">
                 {Object.entries(picks).map(([role, champs]) => (

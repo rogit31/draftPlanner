@@ -11,7 +11,7 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
     }
 
     return (
-        <div className="border border-red-200 p-2">
+        <div className="p-2">
             <div className="teamNameInputWrapper">
                 <input className="teamNameInput" type="text" value={matchSet.team1}
                        onChange={(e) => handleTeamNameChange(matchSetIndex, e.target.value, "team1")}/>

@@ -324,6 +324,14 @@
     "image": "/champInfo/Ivern.png"
   },
   {
+    "name": "IvernByBuppy",
+    "image": "/champInfo/IvernByBuppy.png"
+  },
+  {
+    "name": "Buppy",
+    "image": "/champInfo/IvernByBuppy.png"
+  },
+  {
     "name": "Seraphine",
     "image": "/champInfo/Seraphine.png"
   },

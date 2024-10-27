@@ -3,20 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --backgroundColor: #0c0c0c;
+  --fontColor: #f1f1f1;
+  --draft_border: #ffffff;
+  --bluePicksColor: #18a4d1;
+  --redPicksColor: #ea5f5f;
+  --banColor: #716f6f;
+  --placeholderColor: #474444;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--fontColor);
+  background: var(--backgroundColor);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,6 +22,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 22px 4px 22px;
+}
+.ravenLogo{
+  width: 50px;
 }
 .contentWrapper{
   display: grid;
@@ -37,10 +43,9 @@ img{
   grid-template-columns: repeat(5, 1fr);
 }
 .championInput{
-  color: #000000;
+  color: var(--fontColor);
   padding: 4px;
   width: 100%;
-  border: 1px solid #b6b6b6;
 }
 .championInput:hover{
   cursor: pointer;
@@ -48,19 +53,24 @@ img{
 .championInput:focus{
   outline: none;
   border: none;
-  box-shadow: inset 0 0 0 2px red;
+  box-shadow: inset 0 0 0 1px red;
 }
 .championInput::placeholder{
-  color: #373131;
+  color: var(--placeholderColor);
 }
 .championInputWrapper{
   display: flex;
   height: 36px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 .draftWrapper{
+  gap: 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 280px;
+  padding: 0 1px 0 1px;
+  background-color: var(--draft_border);
 }
 .draftWrapper:hover{
   cursor: pointer;
@@ -69,16 +79,16 @@ img{
   margin: 8px 0 8px;
 }
 .ban{
-  background-color: #7e7d7d;
-  color: #321111;
+  background-color: var(--banColor);
+  color: var(--fontColor);
 }
 .blue-pick {
-  background-color: #32a4e1;
+  background-color: var(--bluePicksColor);
   font-weight: bold;
 }
 
 .red-pick {
-  background-color: #ea5f5f;
+  background-color: var(--redPicksColor);
   font-weight: bold;
 }
 .red-side{
@@ -177,7 +187,7 @@ img{
 }
 .prioPickInput{
   width: 100%;
-  color: black;
+  color: var(--fontColor);
 }
 .prioPickInputWrapper{
   display: flex;
@@ -187,14 +197,13 @@ hr{
   margin-bottom: 4px;
 }
 .firstPicksWrapper{
-  border: solid 1px white;
   width: 100%;
 }
 .blueSideFirstPicks{
-  background-color: #32a4e1;
+  background-color: var(--bluePicksColor);
 }
 .redSideFirstPicks{
-  background-color: #ea5f5f;
+  background-color: var(--redPicksColor);
 }
 .championFirstPickWrapper{
   display: flex;
@@ -203,8 +212,18 @@ hr{
 .championFirstPickWrapper input{
   width: 100%;
 }
+.championFirstPickWrapper img{
+  width: 36px;
+}
+.firstPicksVerticalWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--draft_border);
+  padding-top: 1px;
+}
 .championFirstPickInput{
-  border: 1px solid gray;
+  box-sizing:border-box;
   font-weight: bold;
   color: black;
   padding: 4px;
@@ -219,10 +238,21 @@ hr{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.addChampionButtonWrapper{
+  background-color: var(--backgroundColor);
+  display: flex;
+  justify-content: center;
+}
 .removePickButton{
   color: #d13e3e;
   font-weight: bold;
   padding: 2px 6px 2px 6px;
-  border: 1px solid #373737;
+  border: 1px solid #6e6e6e;
   border-radius: 2px;
+  background-color: var(--backgroundColor);
+}
+.testDiv{
+  background-color: var(--draft_border);
+  width: 200px;
+  height: 200px;
 }

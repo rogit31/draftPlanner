@@ -3,11 +3,23 @@ import PrioPicks from "@/app/components/PrioPicks";
 import MatchSet from "@/app/components/MatchSet";
 import {useEffect, useState} from "react";
 import FirstPicks from "@/app/components/FirstPicks";
+import {Simulate} from "react-dom/test-utils";
+
+//TODO: trim user input for champion names
 
 export default function Home() {
 
     const [data, setData] = useState(buildData);
     const [isMounted, setIsMounted] = useState(false);
+    const [settings, setSettings] = useState({
+        draft_border: "#ffffff",
+        banColor: "#716f6f",
+        bluePicksColor: "#18a4d1",
+        redPicksColor: "#ea5f5f",
+        backgroundColor: "#0c0c0c",
+        fontColor: "#ffffff",
+        placeholderColor: "#474444"
+    });
 
     function buildData() {
         return {
@@ -16,12 +28,20 @@ export default function Home() {
             blueSidePriority: [],
         };
     }
-
+    //Fetching settings and data from localstorage
     useEffect(() => {
         if(typeof(window) !== undefined){
             const savedData = localStorage.getItem("data");
+            const savedSettings = localStorage.getItem("settings");
             if(savedData){
                 setData((JSON).parse(savedData));
+            }
+            if(savedSettings){
+                const parsedSettings = JSON.parse(savedSettings);
+                setSettings(parsedSettings);
+                Object.keys(parsedSettings).forEach((key) => {
+                    document.documentElement.style.setProperty(`--${key}`, parsedSettings[key])
+                })
             }
             setIsMounted(true)
         }
@@ -30,8 +50,9 @@ export default function Home() {
     useEffect(() => {
         if(isMounted){
             localStorage.setItem("data", JSON.stringify(data));
+            localStorage.setItem("settings", JSON.stringify(settings))
         }
-    }, [data, isMounted]);
+    }, [data, settings, isMounted]);
 
     function buildMatch() {
         return {
@@ -293,10 +314,14 @@ export default function Home() {
 
     return (
         <>
-            <h1 className="text-4xl font-bold text-center m-5">DraftPlanner</h1>
+            <header>
+                <a className="ravenLogo" href="https://igortasic.ca" target="_blank"><img src="/pixelRaven.png" alt="pixelated raven"/></a>
+                <h1 className="text-4xl font-bold text-center m-5">DraftPlanner</h1>
+                <button><a href="/options"><img src="/gear.svg" alt=""/></a></button>
+            </header>
             <div className="contentWrapper">
                 <div>
-                    <PrioPicks />
+                <PrioPicks />
                     <FirstPicks />
                 </div>
                 <div>

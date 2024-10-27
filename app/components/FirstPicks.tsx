@@ -52,7 +52,7 @@ export default function FirstPicks() {
         <div className="firstPicksWrapper">
         <h2 className="text-center font-bold">First Picks</h2>
         <div className="firstPicksInputsWrapper">
-            <div className="">
+            <div className="firstPicksVerticalWrapper">
                 {firstPicks.blueSide.map((pick, index) => {
                     const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
@@ -65,7 +65,7 @@ export default function FirstPicks() {
                         </div>
                     )
                 })}
-                <div className="flex justify-center">
+                <div className="addChampionButtonWrapper">
                     <button
                         className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium text-sm px-2.5 py-1 dark:bg-gray-800 dark:hover:bg-gray-700 mt-2 mb-2"
                         onClick={() => handleAddChampion("blueSide")}>
@@ -74,7 +74,7 @@ export default function FirstPicks() {
                 </div>
 
         </div>
-            <div className="">
+            <div className="firstPicksVerticalWrapper">
                 {firstPicks.redSide.map((pick, index) => {
                     const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
@@ -83,14 +83,15 @@ export default function FirstPicks() {
                             <input className="championFirstPickInput redSideFirstPicks" type="text" value={pick}
                                    onChange={(e) => handleNameChange(index, "redSide", e.target.value)}/>
                             {championImage ? <img src={championImage} alt={pick}/> : null}
-                            <button className="removePickButton" onClick={() => handleRemoveChampion(index, "redSide")}>X</button>
+                            <button className="removePickButton" onClick={() => handleRemoveChampion(index, "redSide")}>
+                                X</button>
                         </div>
                     )
                 })}
-                <div className="flex justify-center">
+                <div className="addChampionButtonWrapper">
                     <button
                         className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium text-sm px-2.5 py-1 dark:bg-gray-800 dark:hover:bg-gray-700 mt-2 mb-2"
-                        onClick={() => handleAddChampion("blueSide")}>
+                        onClick={() => handleAddChampion("redSide")}>
                         Add
                     </button>
                 </div>

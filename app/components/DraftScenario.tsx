@@ -18,7 +18,7 @@ const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleCha
         <div>
         <h2 className={`displayName ${draft.siding}`}><span>{team1}</span><span>{team2}</span></h2>
             <div className="draftWrapper">
-            <div>
+            <div className="draftColumnWrapper">
                     {draft.blueSide.picks.map((pick,index) => {
                         const champImage = findChampionImage(pick.championName);
                         const tabIndexOrder = [1, 3, 5, 7, 10, 11, 13, 15, 18, 19]
