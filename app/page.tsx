@@ -3,7 +3,6 @@ import PrioPicks from "@/app/components/PrioPicks";
 import MatchSet from "@/app/components/MatchSet";
 import {useEffect, useState} from "react";
 import FirstPicks from "@/app/components/FirstPicks";
-import {Simulate} from "react-dom/test-utils";
 
 //TODO: trim user input for champion names
 
