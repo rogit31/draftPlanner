@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { HexColorPicker } from "react-colorful";
-import {Simulate} from "react-dom/test-utils";
-import keyDown = Simulate.keyDown;
 
 export default function AboutPage() {
 
