@@ -46,6 +46,7 @@ img{
   color: var(--fontColor);
   padding: 4px;
   width: 100%;
+  background-color: transparent;
 }
 .championInput:hover{
   cursor: pointer;
@@ -186,8 +187,7 @@ img{
   margin: 22px;
 }
 .prioPickInput{
-  width: 100%;
-  color: var(--fontColor);
+border: 1px solid var(--draft_border);
 }
 .prioPickInputWrapper{
   display: flex;
@@ -195,9 +195,6 @@ img{
 }
 hr{
   margin-bottom: 4px;
-}
-.firstPicksWrapper{
-  width: 100%;
 }
 .blueSideFirstPicks{
   background-color: var(--bluePicksColor);
@@ -207,25 +204,22 @@ hr{
 }
 .championFirstPickWrapper{
   display: flex;
-  height: 36px;
 }
 .championFirstPickWrapper input{
   width: 100%;
 }
 .championFirstPickWrapper img{
-  width: 36px;
+  width: 33px;
+  height: 33px;
 }
 .firstPicksVerticalWrapper{
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  padding-top: 1px;
 }
 .championFirstPickInput{
-  box-sizing:border-box;
   font-weight: bold;
-  color: black;
+  color: var(--fontColor);
   padding: 4px;
+  border: 1px solid var(--draft_border);
+  border-collapse: collapse;
 }
 .redSideFirstPicks{
   text-align: right;
@@ -246,12 +240,37 @@ hr{
   color: #d13e3e;
   font-weight: bold;
   padding: 2px 6px 2px 6px;
-  border: 1px solid #6e6e6e;
-  border-radius: 2px;
-  background-color: var(--backgroundColor);
+  border: 1px solid var(--draft_border);
+  background-color: transparent;
 }
 .testDiv{
   background-color: var(--draft_border);
   width: 200px;
   height: 200px;
+}
+.testDivWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.optionsContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+}
+.optionsItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.resetColorsButton{
+  padding: 4px;
+  border: 1px solid white;
+}
+.resetColorsButtonWrapper{
+  margin-top:22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

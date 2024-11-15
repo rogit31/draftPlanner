@@ -49,7 +49,7 @@ export default function FirstPicks() {
     }
 
     return(
-        <div className="firstPicksWrapper">
+        <div className="">
         <h2 className="text-center font-bold">First Picks</h2>
         <div className="firstPicksInputsWrapper">
             <div className="firstPicksVerticalWrapper">
@@ -57,8 +57,8 @@ export default function FirstPicks() {
                     const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return(
-                        <div key={index} className="championFirstPickWrapper blueSideFirstPickWrapper">
-                            <input className="championFirstPickInput blueSideFirstPicks" type="text" value={pick}
+                        <div key={index} className="championFirstPickWrapper blueSideFirstPickWrapper firstPicksInputRow">
+                            <input className="championFirstPickInput blueSideFirstPicks firstPicksInputCell" type="text" value={pick}
                                    onChange={(e) => handleNameChange(index, "blueSide", e.target.value)}/>
                             {championImage ? <img src={championImage} alt={pick}/> : null}
                             <button className="removePickButton" onClick={() => handleRemoveChampion(index, "blueSide")}>X</button>
@@ -79,8 +79,8 @@ export default function FirstPicks() {
                     const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return (
-                        <div key={index} className="championFirstPickWrapper redSideFirstPickWrapper">
-                            <input className="championFirstPickInput redSideFirstPicks" type="text" value={pick}
+                        <div key={index} className="championFirstPickWrapper redSideFirstPickWrapper firstPicksInputRow">
+                            <input className="championFirstPickInput redSideFirstPicks firstPicksInputCell" type="text" value={pick}
                                    onChange={(e) => handleNameChange(index, "redSide", e.target.value)}/>
                             {championImage ? <img src={championImage} alt={pick}/> : null}
                             <button className="removePickButton" onClick={() => handleRemoveChampion(index, "redSide")}>

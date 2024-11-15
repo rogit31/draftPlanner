@@ -66,7 +66,7 @@ export default function PrioPicks() {
                         <hr/>
                         <div className="grid grid-cols-2 gap-1">
                         {champs.map((champion: string, index: number) => {
-                            const champData = champInfo.find(champ => champ.name.toLowerCase() === champion.toLowerCase());
+                            const champData = champInfo.find(champ => champ.name.toLowerCase().trim() === champion.toLowerCase().trim());
                             const champImage = champData ? `${champData.image}` : null;
                             return (
                                 <div key={index} className="flex">

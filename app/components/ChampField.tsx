@@ -12,7 +12,7 @@ const ChampField: FC<ChampFieldProps> = ({ value, index, handleNameChange, champ
         <div className="prioPickInputWrapper">
             <input
                 type="text"
-                className="prioPickInput"
+                className="championInput prioPickInput"
                 value={value}
                 onChange={(event) => handleNameChange(event, index)}
             />
