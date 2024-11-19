@@ -30,11 +30,15 @@ const MatchSet: FC<MatchSetProps> = ({ matchSet, matchSetIndex, handleChampChang
                             team1={matchSet.team1}
                             team2={matchSet.team2}
                         />
-                        <button className="removeDraftButton" onClick={() => handleRemoveDraft(matchSetIndex, draft.id)}>Remove Draft</button>
+                        <div className="removeDraftButtonWrapper">
+                            <button className="removeDraftButton"
+                                    onClick={() => handleRemoveDraft(matchSetIndex, draft.id)}>Remove
+                            </button>
+                        </div>
                     </div>
                 ))}
-                    <ConfirmSideModal
-                        onConfirm={handleConfirm}
+                <ConfirmSideModal
+                    onConfirm={handleConfirm}
                         team1={matchSet.team1}
                     />
             </div>

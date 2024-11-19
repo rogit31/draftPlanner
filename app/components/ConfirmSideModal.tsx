@@ -13,20 +13,22 @@ const ConfirmSideModal: FC<ModalProps> = ({ onConfirm, team1 }) => {
     }
     if (!isOpen) return(
         <div id="confirmSideModalAdd">
-            <button className="confirmSideModalButton" onClick={handleClick}>Add draft</button>
+            <button className="confirmSideModalButton" onClick={handleClick}>+</button>
         </div>
     )
 
     return (
-        <div id="confirmSideModal">
-            <div>
-                <p>{team1} is on:</p>
-                <div onClick={handleClick} className="sideSelectButtonsWrapper">
-                    <button className="blueSideButton" onClick={() => onConfirm("regular")}>Blue</button>
-                    <button className="redSideButton" onClick={() => onConfirm("reverse")}>Red</button>
+        <div className="confirmSideModalWrapper">
+            <div id="confirmSideModal">
+                <div>
+                    <p>{team1} is on:</p>
+                    <div onClick={handleClick} className="sideSelectButtonsWrapper">
+                        <button className="blueSideButton" onClick={() => onConfirm("regular")}>Blue</button>
+                        <button className="redSideButton" onClick={() => onConfirm("reverse")}>Red</button>
+                    </div>
                 </div>
+                <button className="cancelSideSelection" onClick={handleClick}>Cancel</button>
             </div>
-            <button className="cancelSideSelection" onClick={handleClick}>Cancel</button>
         </div>
     );
 };

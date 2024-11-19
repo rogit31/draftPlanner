@@ -78,6 +78,10 @@ img{
 }
 .draftTileWrapper{
   margin: 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .ban{
   background-color: var(--banColor);
@@ -120,7 +124,7 @@ img{
   flex-direction: row-reverse;
 }
 #confirmSideModal{
-  border: solid 1px white;
+  width: 280px;
   text-align: center;
   background-color: #0a0a0a;
   display: flex;
@@ -128,19 +132,22 @@ img{
   justify-content: space-between;
 }
 #confirmSideModalAdd{
-  border: solid 1px white;
-  text-align: center;
-  width: 100%;
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirmSideModalWrapper{
   display: flex;
   justify-content: center;
 }
-#confirmSideModalAdd:hover{
-  cursor: pointer;
-}
 #confirmSideModalAdd button{
-  font-size: 22px;
+  cursor: pointer;
   font-weight: bold;
-  width: 100%;
+  border: solid 1px white;
+  font-size: 20px;
+  width: 60px;
+  height: 40px;
 }
 .sideSelectButtonsWrapper{
   height: 340px;
@@ -176,9 +183,12 @@ img{
   display: flex;
   justify-content: center;
 }
+.removeDraftButtonWrapper{
+}
 .removeDraftButton{
-  border: 1px solid white;
-  padding: 4px;
+  margin-top: 4px;
+  border-bottom: 1px solid white;
+  padding: 2px;
   font-size: 12px;
 }
 .addMatchSetButton{
