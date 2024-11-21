@@ -54,7 +54,7 @@ export default function FirstPicks() {
         <div className="firstPicksInputsWrapper">
             <div className="firstPicksVerticalWrapper">
                 {firstPicks.blueSide.map((pick, index) => {
-                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
+                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase().trim().replace(/'/g, ''));
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return(
                         <div key={index} className="championFirstPickWrapper blueSideFirstPickWrapper firstPicksInputRow">
@@ -76,7 +76,7 @@ export default function FirstPicks() {
         </div>
             <div className="firstPicksVerticalWrapper">
                 {firstPicks.redSide.map((pick, index) => {
-                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase());
+                    const championMatch = champInfo.find(champ => champ.name.toLowerCase() === pick.toLowerCase().trim().replace(/'/g, ''));
                     const championImage = championMatch ? `${championMatch.image}` : null;
                     return (
                         <div key={index} className="championFirstPickWrapper redSideFirstPickWrapper firstPicksInputRow">

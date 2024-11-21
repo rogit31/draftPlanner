@@ -321,7 +321,7 @@ export default function Home() {
             <div className="contentWrapper">
                 <div>
                 <PrioPicks />
-                    <FirstPicks />
+                <FirstPicks />
                 </div>
                 <div>
                     {data.matchSets.map((matchSet, matchSetIndex) => {

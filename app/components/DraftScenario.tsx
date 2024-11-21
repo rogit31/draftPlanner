@@ -5,7 +5,7 @@ import championData from "@/app/components/champInfo.json";
 
 const DraftScenario: FC<DraftScenarioProps> = ({ draft, matchSetIndex, handleChampChange, team1, team2 }) => {
     function findChampionImage(champName: string) {
-        const foundChamp = championData.find((champion) => champion.name.toLowerCase() === champName.toLowerCase());
+        const foundChamp = championData.find((champion) => champion.name.toLowerCase() === champName.toLowerCase().trim().replace(/'/g, ''));
         return foundChamp ? foundChamp.image : null;
     }
 

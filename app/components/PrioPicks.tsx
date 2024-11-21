@@ -63,10 +63,9 @@ export default function PrioPicks() {
                 {Object.entries(picks).map(([role, champs]) => (
                     <div key={role} className="">
                         <h3 className="font-bold text-center">{role.charAt(0).toUpperCase() + role.slice(1)}</h3>
-                        <hr/>
                         <div className="grid grid-cols-2 gap-1">
                         {champs.map((champion: string, index: number) => {
-                            const champData = champInfo.find(champ => champ.name.toLowerCase().trim() === champion.toLowerCase().trim());
+                            const champData = champInfo.find(champ => champ.name.toLowerCase().trim() === champion.toLowerCase().trim().replace(/'/g, ''));
                             const champImage = champData ? `${champData.image}` : null;
                             return (
                                 <div key={index} className="flex">

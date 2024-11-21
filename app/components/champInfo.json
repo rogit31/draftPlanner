@@ -224,6 +224,10 @@
     "image": "/champInfo/JarvanIV.png"
   },
   {
+    "name": "Jarvan",
+    "image": "/champInfo/JarvanIV.png"
+  },
+  {
     "name": "Draven",
     "image": "/champInfo/Draven.png"
   },
@@ -233,6 +237,10 @@
   },
   {
     "name": "MonkeyKing",
+    "image": "/champInfo/MonkeyKing.png"
+  },
+  {
+    "name": "Wukong",
     "image": "/champInfo/MonkeyKing.png"
   },
   {
@@ -480,6 +488,10 @@
     "image": "/champInfo/MasterYi.png"
   },
   {
+    "name": "Yi",
+    "image": "/champInfo/MasterYi.png"
+  },
+  {
     "name": "LeeSin",
     "image": "/champInfo/LeeSin.png"
   },
@@ -557,6 +569,10 @@
   },
   {
     "name": "XinZhao",
+    "image": "/champInfo/XinZhao.png"
+  },
+  {
+    "name": "Xin",
     "image": "/champInfo/XinZhao.png"
   },
   {
@@ -677,6 +693,10 @@
   },
   {
     "name": "MissFortune",
+    "image": "/champInfo/MissFortune.png"
+  },
+  {
+    "name": "MF",
     "image": "/champInfo/MissFortune.png"
   }
 ]
